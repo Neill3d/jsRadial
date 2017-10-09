@@ -114,6 +114,9 @@ MStatus JSRadial::compute(const MPlug &plug, MDataBlock &data)
 	short dim = pose.length();
 	double poseNorm = 0.0;
 
+	if (0 == dim)
+		return MS::kFailure;
+
 	pose[3] *= rotMult;
 	pose[4] *= rotMult;
 	pose[5] *= rotMult;
